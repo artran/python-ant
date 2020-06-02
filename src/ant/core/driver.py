@@ -24,8 +24,6 @@
 #
 ##############################################################################
 
-from __future__ import division, absolute_import, print_function, unicode_literals
-
 from threading import Lock
 
 # USB1 driver uses a USB<->Serial bridge

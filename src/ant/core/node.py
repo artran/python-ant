@@ -24,8 +24,6 @@
 #
 ##############################################################################
 
-from __future__ import division, absolute_import, print_function, unicode_literals
-
 from uuid import uuid4
 from threading import Lock
 

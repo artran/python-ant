@@ -27,8 +27,6 @@
 #
 ##############################################################################
 
-from __future__ import print_function
-
 from .plus import DeviceProfile
 
 

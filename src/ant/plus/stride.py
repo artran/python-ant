@@ -27,8 +27,6 @@
 #
 ##############################################################################
 
-from __future__ import print_function
-
 import struct
 
 from .plus import DeviceProfile

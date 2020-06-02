@@ -24,8 +24,6 @@
 #
 ##############################################################################
 
-from __future__ import division, absolute_import, print_function, unicode_literals
-
 import unittest
 
 from ant.core.exceptions import MessageError
@@ -79,7 +77,7 @@ class MessageTest(unittest.TestCase):
         self.assertEqual(msg.type, MESSAGE_CHANNEL_ASSIGN)
         self.assertEqual(msg.payload, b'\x00' * 3)
         self.assertEqual(msg.checksum, 0xE5)
-        
+
         msg = Message.decode(b'\xA4\x03\x42\x00\x00\x00\xE5')
         self.assertTrue(isinstance(msg, MSG.ChannelAssignMessage))
         self.assertRaises(MessageError, Message.decode, b'\xA4\x03\xFF\x00\x00\x00\xE5')

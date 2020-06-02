@@ -24,11 +24,7 @@
 ##############################################################################
 # pylint: disable=missing-docstring
 
-from __future__ import division, absolute_import, print_function, unicode_literals
-
 from struct import pack, unpack
-
-from six import with_metaclass
 
 from ant.core import constants
 from ant.core.constants import MESSAGE_TX_SYNC, RESPONSE_NO_ERROR
@@ -68,7 +64,8 @@ class MessageType(type):
 MSG_HEADER_SIZE = 3
 MSG_FOOTER_SIZE = 1
 
-class Message(with_metaclass(MessageType)):
+
+class Message(metaclass=MessageType):
     TYPES = {}
     type = None
 
@@ -83,6 +80,7 @@ class Message(with_metaclass(MessageType)):
     @property
     def payload(self):
         return self._payload
+
     @payload.setter
     def payload(self, payload):
         if len(payload) > 9:
@@ -422,6 +420,7 @@ class ChannelEventResponseMessage(ChannelMessage):
     @property
     def messageCode(self):
         return self._payload[2]
+
     @messageCode.setter
     def messageCode(self, message_code):
         if (message_code > 0xFF) or (message_code < 0x00):
@@ -429,7 +428,7 @@ class ChannelEventResponseMessage(ChannelMessage):
 
         self._payload[2] = message_code
 
-    def __str__(self):  # pylint: disable=W0221
+    def __str__(self, **kwargs):  # pylint: disable=W0221
         msgCode = self.messageCode
         if self.messageID != 1:
             return "<ChannelResponse: '%s' on C(%d): %s>" % (

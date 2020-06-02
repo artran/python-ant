@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 from ant.core import log
 
 # USB1 ANT stick interface. Running `dmesg | tail -n 25` after plugging the
@@ -13,7 +11,7 @@ SERIAL = '/dev/ttyUSB0'
 DEBUG = True
 
 # Set to None to disable logging
-#LOG = None
+# LOG = None
 LOG = log.LogWriter()
 
 # ========== DO NOT CHANGE ANYTHING BELOW THIS LINE ==========

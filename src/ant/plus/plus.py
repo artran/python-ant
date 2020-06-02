@@ -27,7 +27,6 @@
 #
 ##############################################################################
 
-from __future__ import print_function
 from threading import Lock
 from enum import Enum
 

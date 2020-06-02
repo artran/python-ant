@@ -28,8 +28,6 @@
 # don't-fix-it-if-it-ain't-broken kind of threaded code ahead.
 #
 
-from __future__ import division, absolute_import, print_function, unicode_literals
-
 from time import sleep, time
 from threading import Lock, Thread
 

@@ -24,14 +24,12 @@
 #
 ##############################################################################
 
-from __future__ import division, absolute_import, print_function, unicode_literals
-
-LOG_LOCATION = '/tmp/python-ant.logtest.ant'
-
 import unittest
 
 from ant.core.log import (LogReader, LogWriter,
                           EVENT_OPEN, EVENT_CLOSE, EVENT_READ, EVENT_WRITE)
+
+LOG_LOCATION = '/tmp/python-ant.logtest.ant'
 
 
 class LogReaderTest(unittest.TestCase):
