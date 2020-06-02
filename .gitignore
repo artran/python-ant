@@ -3,6 +3,7 @@
 *.swp
 *.ant
 *.swo
+.idea/
 .installed.cfg
 virtualenv.py
 bootstrap.py
@@ -20,3 +21,4 @@ include
 lib
 lib64
 src/*.egg-info
+venv/
